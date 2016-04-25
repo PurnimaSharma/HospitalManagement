@@ -8,14 +8,16 @@
     <td>Address</td>
     <td>Password</td>
   </tr>
-  <% @students.each do |i|  %>
+  <% @students.each do |student|  %>
     <tr>
-      <td><%= i.name %></td>
-      <td><%= i.gender %></td>
-      <td><%= i.age %></td>
-      <td><%= i.phoneno %></td>
-      <td><%= i.address %></td>
-      <td><%= i.password %></td>
+      <td><%= student.name %></td>
+      <td><%= student.gender %></td>
+      <td><%= student.age %></td>
+      <td><%= student.phoneno %></td>
+      <td><%= student.address %></td>
+      <td><%= student.password %></td>
+      <td><%= link_to 'Show',"/students/#{student.id}", method: :get%></td>
+      <td><%= link_to 'Destroy',"/students/#{student.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,7 +9,8 @@ Rails.application.routes.draw do
   get '/students/new' => 'student#new' 
   get '/new_client' => 'home#new_client'
   post '/students' =>'student#create'
-  get '/students/show' => 'student#show'
+  get '/students/:id' => 'student#show'
+  delete '/students/:id' =>'student#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
