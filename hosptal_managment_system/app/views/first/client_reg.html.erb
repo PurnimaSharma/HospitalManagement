@@ -1,0 +1,53 @@
+
+<font size ="20px">
+<h1 align= "center"> Client Registeration </h1>
+<form name="myForm" onsubmit="return validateForm()">
+<table  cellspacing="6" cellpadding="6" border="0" >
+  <tr>
+    <td>Name: </td>
+    <td> <input type="text" name="name"></td>
+    <td><span id="nameStatus" style="color:red"> </span></td>
+  </tr>
+  <tr><td> Gender:</td> 
+      <td><label><input type="radio" name="gender" value="male" >Male
+          <input type="radio" name="gender" value="female" >Female     
+      </td></label>
+      <td><span id="genderStatus" style="color:red"> </span></td>
+  </tr>
+  <tr>
+    <td> Age:  </td>
+    <td><div id="mycontainer">
+            <select id="AgeDropdownId" name="AgeDropdown" class="AgeDropdown" >
+                <option value="0"><--Select Age--></option>
+            </select>
+        </div> 
+    </td>
+     <td><span id="ageStatus" style="color:red"> </span></td>
+   </tr>
+      <tr>
+   <td>Phone no: </td>
+   <td> <input type="text" name="phn"></td>
+   <td><span id="phnStatus" style="color:red"> </span></td>
+   </tr>
+   <tr>
+     <td> Address: </td>
+     <td><textarea cols="18" rows="4" name="add"></textarea></td>
+     <td><span id="addStatus" style="color:red"> </span></td>
+   </tr>
+   <tr>
+   <td>Password: </td>
+   <td> <input type="text" name="pass"></td>
+   <td><span id="passStatus" style="color:red"> </span></td>
+   </tr>
+
+   </table>
+   <label>
+   <input type="checkbox" name="accept" > I accept the terms and conditions</label>
+   <span id="accStatus" style="color:red"> </span><br>
+    <input type="submit" value="Submit" >
+  <br>
+
+ 
+</form>
+</font>
+<a href="/students/new"> Create Student</a>

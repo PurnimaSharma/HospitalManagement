@@ -1,0 +1,52 @@
+<h1> Student Registration </h1>
+
+<%= form_for(@student) do |f| %>
+<%  if(@student.errors.any? == true) %>
+<div id = "Error Explanation">
+<h2><%= pluralize(@student.errors.count, "error") %> Student can't be registered</h2>
+<ul><% @student.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+</ul>
+</div>
+<% end %>
+<table cellspacing ="15">
+  <tr>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :Gender %></td>
+    <td><%= f.radio_button :gender, :male %> Male
+        <%= f.radio_button :gender, :female %> Female
+    </td>
+  </tr>
+  <tr> 
+    <td><%= f.label :Age %></td>
+    <td><%= f.select :age, options_for_select(0..50),{prompt: "Select Age"} %>
+    </td>
+   </tr>
+  <tr>
+    <td> <%= f.label :phone %></td>
+    <td> <%= f.text_field :phoneno %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :Address %></td>
+    <td><%= f.text_area :address %></td>
+   <tr>
+    <tr>
+      <td><%= f.label :Password %></td>
+      <td><%= f.text_field :password %></td>
+   </tr>
+   </table>
+   <br>
+   <br>
+   <div class = "field ">
+    <%= f.check_box :accept %>
+    <%= f.label :"I accept the terms and conditions" %>
+   </div>
+
+ 
+  <%= f.submit 'Submit' %>
+  
+<% end %>

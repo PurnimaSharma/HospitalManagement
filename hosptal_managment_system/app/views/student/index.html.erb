@@ -1,0 +1,23 @@
+<h1> Registered Students are </h1>
+<table colspan="3">
+  <tr>
+    <td>Name</td>
+    <td>Gender</td>
+    <td>Age</td>
+    <td>Phone no</td>
+    <td>Address</td>
+    <td>Password</td>
+  </tr>
+  <% @students.each do |i|  %>
+    <tr>
+      <td><%= i.name %></td>
+      <td><%= i.gender %></td>
+      <td><%= i.age %></td>
+      <td><%= i.phoneno %></td>
+      <td><%= i.address %></td>
+      <td><%= i.password %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Create Students' , '/students/new' %>
